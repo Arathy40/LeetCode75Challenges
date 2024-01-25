@@ -1,0 +1,30 @@
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+**************************** C# ***********************
+public string MergeAlternately(string word1, string word2) {
+  int i,j=0;
+  string w1=word1;
+  string w2=word2;
+  string newstring="";
+   int n=w1.Length;
+   int m=w2.Length;
+   for(i=0;i<n;i++)
+   {
+      newstring=newstring+w1[i];
+   
+        for (; j < i + 1 && j < m; j++)
+         {
+             newstring=newstring+w2[j];
+         }
+
+   }
+   if(n<m)
+   {
+       for(int p=n;p<m;p++)
+       {
+           newstring+=w2[p];
+       }
+   }
+         return(newstring);
+        
+    }
+}
