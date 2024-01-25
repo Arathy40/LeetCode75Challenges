@@ -1,0 +1,31 @@
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+--------------------------------JAVA--------------------------
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+
+      int n=word1.length();
+      int m=word2.length();
+      int i,j=0;
+       StringBuilder newString = new StringBuilder(); 
+      for(i=0;i<n;i++)
+      {
+             newString.append(word1.charAt(i));
+   
+        for (; j < i + 1 && j < m; j++)
+         {
+             newString.append(word2.charAt(j));
+         }
+
+   }
+   if(n<m)
+   {
+       for(int p=n;p<m;p++)
+       {
+           newString.append(word2.charAt(p));
+       }
+   }
+       return newString.toString();
+    }
+}
